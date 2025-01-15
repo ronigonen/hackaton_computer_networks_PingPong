@@ -17,7 +17,7 @@ class Colors:
 
 def listen_for_offers():
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.bind(('', 54321))
         print(f"{Colors.OKCYAN}Listening for server offers...{Colors.ENDC}")
 
